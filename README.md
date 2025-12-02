@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=000000,500000,ff0000&height=220&section=header&text=CrimsonLock&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Ransomware%20Simulation%20%26%20Cryptography%20Lab&descAlignY=60&descSize=20" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=000000,ff0000&height=220&section=header&text=CrimsonLock&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Ransomware%20Simulation%20%26%20Cryptography%20Lab&descAlignY=60&descSize=20" width="100%"/>
 
   <p>
     <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
