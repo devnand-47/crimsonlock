@@ -1,6 +1,8 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=000000,ff0000&height=220&section=header&text=CrimsonLock&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Ransomware%20Simulation%20%26%20Cryptography%20Lab&descAlignY=60&descSize=20" width="100%"/>
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=50&pause=1000&color=F70000&center=true&vCenter=true&width=800&lines=CRIMSON+LOCK;RANSOMWARE+SIMULATOR;AES-256+ENCRYPTION+LAB" alt="Typing SVG" />
+  </a>
 
   <p>
     <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -38,68 +40,5 @@ It utilizes the `Fernet` (AES-128 in CBC mode) implementation from the `cryptogr
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com/devnand-47/CrimsonLock.git
+git clone [https://github.com/devnand-47/CrimsonLock.git](https://github.com/devnand-47/CrimsonLock.git)
 cd CrimsonLock
-pip install -r requirements.txt
-python main.py
-```
-3. Setup the Sandbox (Safety Zone)
-Create the sandbox folder and add some dummy files to test:
-
-```
-mkdir sandbox
-echo "This is a secret" > sandbox/secret.txt
-echo "Bank Password: 123" > sandbox/bank.txt
-```
-Usage Guide
-Run the main script to enter the command menu:
-
-Bash
-```
-python main.py
-```
-Step 1: Generate Key
-Select [1]. This creates the_key.key.
-
-Note: In a real attack, this key is sent to the attacker. If you lose this file, the data in the sandbox is lost forever.
-
-Step 2: Encrypt (The Attack)
-Select [2]. The script will iterate through the sandbox folder and encrypt every file.
-
-Check sandbox/secret.txt -> It will now be gibberish.
-
-A RANSOM_NOTE.txt will be dropped.
-
-Step 3: Decrypt (The Fix)
-Select [3]. The script reads the_key.key and reverses the encryption.
-
-Check sandbox/secret.txt -> It will be readable again.
-
-📂 Project Structure
-```
-CrimsonLock/
-├── sandbox/             # ⚠️ TARGET ZONE: Put dummy files here
-│   ├── secret.txt
-│   └── bank.txt
-├── main.py              # The Malware Logic
-├── requirements.txt     # Dependencies
-└── the_key.key          # Generated Master Key (Do not delete!)
-```
-<div align="center"> <h3>Developed with 💀 by <a href="https://github.com/devnand-47">Dev_Nand</a></h3> </div>
-
-
-### **Optional Code Safety Update**
-
-If you want to be *extra* safe, add this specific check to the top of your `main.py` (under the imports). It forces the user to type "YES" before the script even starts.
-
-```python
-# Add this to the very top of main.py
-import sys
-
-print("⚠️  WARNING: You are about to run a Ransomware Simulator.")
-print("This tool encrypts files in the 'sandbox' folder.")
-confirm = input("Type 'YES' to confirm you understand the risks: ")
-
-if confirm != "YES":
-    print("Aborting.")
-    sys.exit()
