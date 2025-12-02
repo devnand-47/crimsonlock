@@ -40,5 +40,59 @@ It utilizes the `Fernet` (AES-128 in CBC mode) implementation from the `cryptogr
 
 #### 1. Clone the Repository
 ```bash
-git clone [https://github.com/devnand-47/CrimsonLock.git](https://github.com/devnand-47/CrimsonLock.git)
+git clone https://github.com/devnand-47/CrimsonLock.git
 cd CrimsonLock
+```
+2. Install Dependencies
+   ```
+   pip install -r requirements.txt
+   ```
+   3. Setup the Sandbox
+Create the sandbox folder and add some dummy files to test:
+```
+mkdir sandbox
+echo "This is a secret" > sandbox/secret.txt
+echo "Bank Password: 123" > sandbox/bank.txt
+```
+Usage Guide
+Run the main script to enter the command menu:
+```
+python main.py
+```
+Step 1: Generate Key
+Select `[1]`. This creates `the_key.key`.
+Note: In a real attack, this key is sent to the attacker. If you lose this file, the data in the sandbox is lost forever.
+Step 2: Encrypt (The Attack)
+Select `[2]`. The script will iterate through the `sandbox` folder and encrypt every file.
+
+Check `sandbox/secret.txt` -> It will now be gibberish.
+
+A `RANSOM_NOTE.txt` will be dropped.
+
+Step 3: Decrypt (The Fix)
+Select `[3]`. The script reads `the_key.key` and reverses the encryption.
+
+Check `sandbox/secret.txt` -> It will be readable again.
+📂 Project Structure
+```
+CrimsonLock/
+├── sandbox/             # ⚠️ TARGET ZONE: Put dummy files here
+│   ├── secret.txt
+│   └── bank.txt
+├── main.py              # The Malware Logic
+├── requirements.txt     # Dependencies
+└── the_key.key          # Generated Master Key (Do not delete!)
+```
+⚠️ Legal Disclaimer
+This tool is provided for EDUCATIONAL PURPOSES only.
+
+The developer `(Dev_Nand)` demonstrates this code to teach Cryptography and Malware Analysis. Using encryption logic to lock files on systems you do not own is illegal and classified as a cybercrime.
+
+Always run this tool in a controlled environment.
+<div align="center"> <h3>Developed with 💀 by <a href="https://github.com/devnand-47">Dev_Nand</a></h3> </div>
+### **Why this is better:**
+
+  * **Reliability:** The Typing SVG service is much more stable than the Capsule Render service for complex headers.
+  * **Aesthetic:** The animated typing text (`CRIMSON LOCK... RANSOMWARE SIMULATOR...`) fits the "hacker" vibe of this specific project perfectly.
+
+**Once you confirm this is working, we can finally move on to Project 2: Payload-Viper (The Code Obfuscator).**
